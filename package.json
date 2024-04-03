@@ -1,0 +1,25 @@
+{
+  "name": "mvserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.6",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/mongoose": "^5.11.97",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.4",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
+}
