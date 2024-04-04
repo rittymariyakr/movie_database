@@ -5,12 +5,12 @@ import authMiddleware from '../middleware/userauth';
 
 const router = express.Router();
 
-router.get("/movie", MovieController.getAllMovie);
-router.get("/movie/:id",  MovieController.getMovie);
-router.post("/movie", MovieController.createMovie);
-router.put('/movie/:id', MovieController.updateMovie);
-router.delete('/movie/:id', MovieController.deleteMovie);
+router.get("/movie",authMiddleware, MovieController.getAllMovie);
+router.get("/movie/:id",authMiddleware,  MovieController.getMovie);
+router.post("/movie",authMiddleware, MovieController.createMovie);
+router.put('/movie/:id',authMiddleware, MovieController.updateMovie);
+router.delete('/movie/:id',authMiddleware, MovieController.deleteMovie);
 router.post('/user', UserController.register);
-router.post('/login', authMiddleware, UserController.login);
+router.post('/login', UserController.login);
 
 export default router;

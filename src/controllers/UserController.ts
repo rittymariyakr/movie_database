@@ -33,10 +33,12 @@ class UserController {
 
             const user = await UserModel.findOne({ email })
             if (!user) {
-                return res.status(404).json({ message: 'user not found' })
+                return res.status(404).json({ message: 'user not found' });
             }
             else {
-                const token = jwt.sign({ userId: user._id }, "supersecret")
+                const token = jwt.sign({ userId: user._id }, "supersecret");
+                console.log(token);
+                
                 res.status(200).json({ token })
             }
         } catch (error) {
@@ -44,6 +46,8 @@ class UserController {
             res.status(500).json({ message: "Internal server error" })
         }
     }
+
+    
 }
 
 export default new UserController();
